@@ -1,0 +1,234 @@
+[root@jenkins python_test_091023]# cat python_total_091023.py 
+#!/usr/bin/python
+
+import sys
+import json
+import mymodule091023
+
+#from optparse import OptionParser
+#
+#parser = OptionParser()
+#
+#parser.add_option("-f", "--file", action="store", type="string", dest="file", help="<file>")
+#
+#(options, args) = parser.parse_args()
+#
+#if options.file == None:
+#  print("Please use --help for options: ")
+#  sys.exit(1)
+#else: 
+#  o=open(options.file)
+#  print(o.read())
+
+class weekend():
+  extra_time_off = "Yes, extra time off"
+  extra_stuff_done = "Yes, extra stuff done"
+
+  def __init__(self, whichday, dowhat):
+    self.whichday = whichday
+    self.dowhat = dowhat
+
+  def location(self, where):
+    print("During weekend on " + self.whichday + " activity like " + self.dowhat + " at " + where + " which can be really meaningful ")
+
+w1 = weekend("Sat", "Hiking")
+print(w1.dowhat)
+
+w1.location("Lake Chabot")
+
+class weekend2(weekend):
+  pass
+
+w2=weekend2("Sun", "Go Church")
+
+print(w2.whichday)
+
+w2.location("City of Milpitas")
+
+# function
+
+def sumup(fnumber, snumber):
+  return fnumber + snumber
+
+print(sumup(5, 6))
+
+# dict
+
+thisdict = {
+  "Mon": "One", 
+  "Tue": "Two",
+  "Wed": "Three"
+}
+
+
+# print out dict keys
+# for loop
+
+for a in thisdict:
+  print(a)  
+
+# print out dict values
+
+for b in thisdict:
+  print(thisdict[b])
+
+# utilize dict keys method
+
+print("Utilize dict keys method")
+for c in thisdict.keys():
+  print(c)
+
+print("Utilize dict values method")
+for d in thisdict.values():
+  print(d)
+
+print("Utilize dict items method")
+for e,f in thisdict.items():
+  print(e,f)
+
+print("Simply just print out thisdict")
+print(thisdict)
+
+print("Use type function to find out data type")
+print(type(thisdict))
+
+# json
+
+g = '{"mon":"one", "tue":"two", "wed":"three"}'
+print(g)
+print("Find out type of g: ")
+print(type(g))
+
+h = json.loads(g)
+print(h)
+print("Find out type of h:")
+print(type(h))
+
+# dict len
+
+print(len(thisdict))
+
+# expand dict
+
+thisdict["Thurs"] = "Four"
+print("After adding one more item in thisdict: becomes: ", thisdict)
+
+# modify dict values
+
+thisdict["Thurs"] = "Fooour"
+print("After modify dict values thisdict becomes: ", thisdict)
+
+# how to revert dict keys and values
+
+# fun sum
+
+def sum(i,j):
+  print("Sum of " + str(i) + " and " + str(j) + " equals " + str( i + j ))
+
+sum(7,8) 
+
+# list
+
+#mylist = ["apple", "ball", "cat"]
+#
+## print out list
+#
+#for k in mylist:
+#  print(k)
+
+
+k = ["A", "A", "B", "C", "D", "D"]
+
+# how to get rid of duplicated items in list
+
+l = []
+
+for m in k:
+  if m not in l:
+    l.append(m)
+
+print("Original list is: ", k)
+
+print("After get rid of duplicated items in list, list becomes: ", l)
+
+# Try Except
+
+todday = "Sun"
+
+try:
+  print("today is: ", today)
+except:
+  print("today is NOT defined!!!")
+
+
+# play with python module
+
+mymodule091023.greetings("jordan")
+
+
+# while loop
+
+grade = 10
+
+print("You are attending grade: " + str(grade) + " now")
+
+while grade < 12:
+  grade+=1
+  print("You will be attending grade: " + str(grade) + " next !")
+
+print("Congras!!!, You will be attenting College next ")
+
+
+# string fun
+
+name = "Jordan"
+
+print(name[1])
+print(name[0])
+
+
+# concatenate string
+
+fname = "Jordan"
+lname = "Lee"
+
+print(fname + " " +  lname)
+
+
+# string format method
+
+age = 23
+
+txt = "my name is Cool and my age is {}"
+
+print(txt.format(age))
+
+
+# check if key in dict or not
+
+thisdict["Fri"] = "Five"
+
+print("thisdict now becomes: ", thisdict)
+
+
+if "Frii" in thisdict:
+  print("Frii exists in thisdict")
+else:
+  print("Frii is not exist in thisdict")
+
+# pop method to remove dict items
+
+thisdict.pop("Wed")
+
+print("So after pop out the dict item: thisdict becomes: ", thisdict)
+
+print("length of thisdict becomes: " + str(len(thisdict)))
+
+
+# dict copy method
+
+copydict = thisdict.copy()
+
+print("After copy original thisdict with new copy dict: ", copydict)
+
+print("Congrats, Jordan. You made it again at 091023 532pm")
